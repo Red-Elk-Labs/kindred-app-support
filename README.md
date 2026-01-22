@@ -16,3 +16,4 @@ This site is ready to be deployed to GitHub Pages.
 2. Go to **Settings** > **Pages**.
 3. Select `main` branch as the source.
 4. Your site will be live at `https://username.github.io/repo-name/`.
+# kindred-app-support
