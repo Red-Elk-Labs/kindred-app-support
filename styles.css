@@ -48,13 +48,14 @@ body {
     }
 }
 
-.app-icon-placeholder {
+.app-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
     border-radius: 22%; /* Superellipse-ish */
     margin: 0 auto 24px;
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 h1 {
