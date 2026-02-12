@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Support page for Kindred. Contact us or view our privacy policy.">
-    <title>App Support</title>
+    <meta name="theme-color" content="#FDFBF7">
+    <title>Kindred Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <main class="container">
-        <div class="card fade-in">
+        <section class="card fade-in" aria-labelledby="support-heading">
             <header>
-                <img src="logo.png" alt="Kindred Logo" class="app-icon">
-                <h1>Kindred Support</h1>
-                <p class="subtitle">We're here to help you get the most out of your experience.</p>
+                <div class="brand-lockup" aria-label="Kindred brand">
+                    <span class="brand-mark-wrap">
+                        <img src="quilt-mark-light.png" alt="" class="brand-mark">
+                    </span>
+                    <span class="brand-name">KINDRED</span>
+                </div>
+
+                <h1 id="support-heading">Support</h1>
+                <p class="subtitle">Need help with Kindred? We respond quickly to questions, feedback, and account issues.</p>
             </header>
-            
+
             <div class="action-area">
                 <a href="mailto:redelklabs@gmail.com" class="btn primary-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
@@ -27,37 +36,37 @@
                 </a>
                 <span class="email-text">redelklabs@gmail.com</span>
             </div>
-        </div>
+        </section>
 
-        <div class="card fade-in delay-1" id="privacy">
-            <h2>Privacy Policy</h2>
+        <section class="card fade-in delay-1" id="privacy" aria-labelledby="privacy-heading">
+            <h2 id="privacy-heading">Privacy Policy</h2>
             <p class="policy-intro">
-                Kindred respects your privacy. We believe in transparency and keeping your data secure.
+                Kindred respects your privacy and is designed to help you stay connected without sharing your personal relationship data.
             </p>
             <div class="policy-details">
                 <div class="policy-item">
-                    <span class="icon">🔒</span>
+                    <span class="icon" aria-hidden="true">🔒</span>
                     <div class="content">
                         <strong>Data Collection</strong>
-                        <p>No personally identifiable information is collected.</p>
+                        <p>No personally identifiable information is collected for resale or advertising.</p>
                     </div>
                 </div>
                 <div class="policy-item">
-                    <span class="icon">⚙️</span>
+                    <span class="icon" aria-hidden="true">⚙️</span>
                     <div class="content">
                         <strong>Usage</strong>
-                        <p>Data is used solely for app functionality and local preferences.</p>
+                        <p>Data is used only to power app functionality and reminder experiences.</p>
                     </div>
                 </div>
                 <div class="policy-item">
-                    <span class="icon">✉️</span>
+                    <span class="icon" aria-hidden="true">✉️</span>
                     <div class="content">
                         <strong>Contact</strong>
-                        <p>For specific privacy concerns, please contact us directly.</p>
+                        <p>For privacy questions, reach out directly at the support email above.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <footer class="footer fade-in delay-2">
             &copy; <span id="year"></span> Red Elk Labs. All rights reserved.

@@ -1,12 +1,19 @@
 :root {
-    --primary-color: #6B7A5E;
-    --primary-hover: #5C6356;
-    --bg-color: #F3F0E6;
-    --card-bg: #FDFBF7;
-    --text-main: #5C6356;
-    --text-secondary: #8B9678;
-    --border-radius: 20px;
-    --shadow: 0 10px 40px -10px rgba(92, 99, 86, 0.08);
+    --primary: #9DBEBB;
+    --accent: #FFE5D9;
+    --accent-soft: #FFF1EA;
+    --accent-border: #F7D4C2;
+    --brand-navy: #2D3648;
+    --surface-page: #FDFBF7;
+    --surface-card: #FFFFFF;
+    --surface-soft: #F7F3EC;
+    --stroke-soft: #E9E3DA;
+    --text-strong: #000000;
+    --text-muted: #000000;
+    --sage-light: #E8EFEA;
+    --off-white: #FDFCFB;
+    --border-radius: 24px;
+    --shadow: 0 20px 44px -26px var(--stroke-soft);
 }
 
 * {
@@ -14,112 +21,154 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centering vertically too */
     min-height: 100vh;
     padding: 20px;
-    line-height: 1.5;
+    font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text-strong);
+    background:
+        radial-gradient(1200px 420px at 10% -8%, var(--sage-light), transparent 56%),
+        radial-gradient(860px 320px at 100% 0%, var(--accent-soft), transparent 48%),
+        linear-gradient(180deg, var(--surface-soft), var(--surface-page));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.55;
 }
 
 .container {
-    max-width: 560px;
+    max-width: 620px;
     width: 100%;
 }
 
 .card {
-    background: var(--card-bg);
-    padding: 40px;
+    background: var(--surface-card);
+    border: 1px solid var(--stroke-soft);
+    padding: 36px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     text-align: center;
-    margin-bottom: 24px;
-    transition: transform 0.2s ease;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Subtle lift on desktop hover, mostly for feel */
 @media (hover: hover) {
     .card:hover {
         transform: translateY(-2px);
+        box-shadow: 0 24px 52px -30px var(--stroke-soft);
     }
 }
 
-.app-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 22%; /* Superellipse-ish */
-    margin: 0 auto 24px;
-    display: block;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.brand-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--accent-border);
+    background: linear-gradient(180deg, var(--off-white), var(--accent-soft));
+}
+
+.brand-mark-wrap {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+}
+
+.brand-mark {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-family: "Quicksand", "Outfit", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.26em;
+    font-weight: 700;
+    color: var(--text-strong);
 }
 
 h1 {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 42px;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
     margin: 0 0 12px;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    color: var(--text-strong);
+}
+
+.subtitle {
+    margin: 0 auto 24px;
+    max-width: 460px;
+    color: var(--text-muted);
+    font-size: 18px;
 }
 
 h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 0 0 20px;
+    margin: 0 0 16px;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-strong);
 }
 
-p {
-    color: var(--text-secondary);
+.policy-intro {
     margin: 0 0 24px;
+    color: var(--text-muted);
     font-size: 17px;
+}
+
+.action-area {
+    margin-top: 4px;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 14px 32px;
-    border-radius: 99px;
+    background-color: var(--primary);
+    color: var(--surface-card);
+    border: 1px solid transparent;
+    padding: 14px 30px;
+    border-radius: 999px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
-    transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: all 0.2s ease;
+    box-shadow: 0 8px 20px -12px var(--stroke-soft);
 }
 
 .btn:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.02);
+    transform: translateY(-1px);
+    background-color: var(--primary);
+    color: var(--surface-card);
+    filter: brightness(0.96);
 }
 
 .btn:active {
-    transform: scale(0.98);
+    transform: translateY(0);
 }
 
 .email-text {
     display: block;
-    margin-top: 16px;
+    margin-top: 14px;
     font-size: 13px;
-    color: var(--text-secondary);
-    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-    opacity: 0.8;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
 }
 
-/* Privacy Section Styling */
 .policy-details {
     text-align: left;
-    margin-top: 24px;
+    margin-top: 20px;
 }
 
 .policy-item {
     display: flex;
     align-items: flex-start;
     padding: 16px 0;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid var(--stroke-soft);
 }
 
 .policy-item:first-child {
@@ -127,44 +176,85 @@ p {
 }
 
 .policy-item .icon {
-    font-size: 20px;
-    margin-right: 16px;
-    margin-top: 2px;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin-right: 12px;
+    margin-top: 1px;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid var(--stroke-soft);
 }
 
 .policy-item .content strong {
     display: block;
-    color: var(--text-main);
+    color: var(--text-strong);
     font-size: 15px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 
 .policy-item .content p {
     margin: 0;
+    color: var(--text-muted);
     font-size: 14px;
 }
 
 .footer {
     text-align: center;
     font-size: 13px;
-    color: var(--text-secondary);
-    margin-top: 40px;
-    opacity: 0.6;
+    color: var(--text-muted);
+    margin-top: 30px;
+    opacity: 0.74;
 }
 
-/* Animations */
 .fade-in {
     opacity: 0;
-    animation: fadeIn 0.6s ease-out forwards;
-    transform: translateY(10px);
+    animation: fadeIn 0.55s ease-out forwards;
+    transform: translateY(8px);
 }
 
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
 
 @keyframes fadeIn {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 16px;
+    }
+
+    .card {
+        padding: 28px 22px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .subtitle,
+    .policy-intro {
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 100%;
     }
 }
