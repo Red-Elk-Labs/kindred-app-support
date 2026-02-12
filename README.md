@@ -10,10 +10,11 @@ This is a simple support page template designed for App Store submissions and ge
 
 ## Deployment
 
-This site is ready to be deployed to GitHub Pages.
+This site is configured to deploy to GitHub Pages using GitHub Actions.
 
 1. Push this repository to GitHub.
-2. Go to **Settings** > **Pages**.
-3. Select `main` branch as the source.
-4. Your site will be live at `https://username.github.io/repo-name/`.
+2. Go to **Settings** > **Pages** and set **Source** to **GitHub Actions**.
+3. Automatic deploys run on every push to `main`.
+4. Manual deploys are available from **Actions** > **Deploy GitHub Pages** > **Run workflow**.
+5. Your site will be live at `https://username.github.io/repo-name/`.
 # kindred-app-support
